@@ -1,5 +1,5 @@
 # Importando Blueprint# Importando Blueprint
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 # Creando instancia
 bp = Blueprint('auth', __name__, url_prefix = '/auth')
@@ -7,8 +7,8 @@ bp = Blueprint('auth', __name__, url_prefix = '/auth')
 #Creado ruta y función
 @bp.route('/register')
 def register():
-    return "Registrar usuario"
+    return render_template('auth/register.html')
 
 @bp.route('/login')
 def login():
-    return "Inciar sesion"
+    return render_template('auth/login.html')
